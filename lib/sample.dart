@@ -18,7 +18,7 @@ class _SampleState extends State<Sample> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("SUccess"),
+          Text("SUccess come way to go"),
         ],
       ),
     );
