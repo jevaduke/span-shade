@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +12,11 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
 
-class OurWork extends StatefulWidget {
-  const OurWork({super.key});
+class Carosel extends StatefulWidget {
+  const Carosel({super.key});
 
   @override
-  State<OurWork> createState() => _OurWorkState();
+  State<Carosel> createState() => _CaroselState();
 }
 
 final List<Widget> imageSliders = imgList
@@ -25,7 +27,7 @@ final List<Widget> imageSliders = imgList
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover, width: 500.0),
+                    Image.network(item, fit: BoxFit.cover, width: 800.0),
                     Positioned(
                       bottom: 0.0,
                       left: 0.0,
@@ -51,47 +53,22 @@ final List<Widget> imageSliders = imgList
         ))
     .toList();
 
-class _OurWorkState extends State<OurWork> {
+class _CaroselState extends State<Carosel> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              "Our Work",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Container(
-                child: CarouselSlider.builder(
+            CarouselSlider(
               options: CarouselOptions(
+                autoPlay: true,
                 aspectRatio: 2.0,
-                enlargeCenterPage: false,
-                viewportFraction: 1,
+                enlargeCenterPage: true,
               ),
-              itemCount: (imgList.length / 2).round(),
-              itemBuilder: (context, index, realIdx) {
-                final int first = index * 2;
-                final int second = first + 1;
-                return Row(
-                  children: [first, second].map((idx) {
-                    return Expanded(
-                      flex: 1,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        child: Image.network(imgList[idx], fit: BoxFit.cover),
-                      ),
-                    );
-                  }).toList(),
-                );
-              },
-            )),
+              items: imageSliders,
+            ),
           ],
         ),
       ),
