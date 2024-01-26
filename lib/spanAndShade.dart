@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:rounded_background_text/rounded_background_text.dart';
 import 'package:span_and_shade/aboutUs.dart';
 import 'package:span_and_shade/carosel.dart';
-import 'package:span_and_shade/contact.dart';
 import 'package:span_and_shade/ourFaith.dart';
 import 'package:span_and_shade/ourWork.dart';
 
@@ -23,13 +22,9 @@ class _SASState extends State<SAS> {
           Padding(
             padding: const EdgeInsets.only(right: 100.0),
             child: GestureDetector(
-              child: const Text(
-                "Our Work",
-              ),
+              child: const Text("Mail to : spanandshade@gmail.com"),
               onTap: () {
-                setState(() {
-                  
-                });
+                setState(() {});
               },
             ),
           ),
@@ -37,26 +32,12 @@ class _SASState extends State<SAS> {
             padding: EdgeInsets.only(right: 100.0),
             child: GestureDetector(
               child: const Text(
-                "About Us",
+                "Contact info : +919488536969",
               ),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutUs()),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 100.0),
-            child: GestureDetector(
-              child: const Text(
-                "Contact",
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Contact()),
                 );
               },
             ),
@@ -74,7 +55,6 @@ class _SASState extends State<SAS> {
               OurFaith(),
               OurWork(),
               AboutUs(),
-              Contact(),
             ],
           ),
         ),

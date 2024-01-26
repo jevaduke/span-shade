@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:span_and_shade/spanandshade.dart';
+import 'package:span_and_shade/spanAndShade.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
