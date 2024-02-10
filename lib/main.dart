@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Span & Shade',
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
         useMaterial3: true,
       ),

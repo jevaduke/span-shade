@@ -29,7 +29,7 @@ class _SASState extends State<SAS> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 100.0),
+            padding: const EdgeInsets.only(right: 100.0),
             child: GestureDetector(
               child: const Text(
                 "Contact info : +919488536969",
@@ -50,12 +50,7 @@ class _SASState extends State<SAS> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Carosel(),
-              OurFaith(),
-              OurWork(),
-              AboutUs(),
-            ],
+            children: [],
           ),
         ),
       ),
@@ -69,10 +64,10 @@ class _SASState extends State<SAS> {
         RoundedBackgroundText(
           'Shade',
           style: const TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 20,
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
         ),
       ],
     );
